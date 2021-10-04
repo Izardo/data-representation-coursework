@@ -1,0 +1,22 @@
+<!-- 1. Make a webpage that outputs 1 to 10 (or N) to the console 
+     2. Make a webpage that outputs all the values of an array -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ex 7</title>
+    </head>
+    <body>
+        <div id="output">Output will go here</div>
+    </body>
+    <script>
+        for (var i=0; i < 10; i++){
+            console.log(i)
+        }
+        var names = ["Helen", "Jane", "Pikachoo"]
+        var output = ''
+        for (name of names){
+            output += name + "\n"
+        }
+        document.getElementById("output").innerText = output
+    </script>
+</html>
