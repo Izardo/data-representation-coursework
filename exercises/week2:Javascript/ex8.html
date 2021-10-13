@@ -1,1 +1,26 @@
-<!--
+<!-- Create a webpage with multiple inputs and a button, when the user hits the button read all the inputs, store the values into a class and output the class to the console -->
+
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <title>ex 8</title>
+    </head>
+    <body>
+        <div id="form">
+            First name: <input type="text" name="firstName"/><br>
+            Last name: <input type="text" name="lastName"/><br>
+            Age: <input type="text" name="age"/><br>
+            <button onclick=doForm()>Create form</button>
+        </div>
+    </body>
+    <script>
+        function doForm(){
+            var employee = {}
+            var form = document.getElementById("form")
+            employee.firstName = form.querySelector('input[name="firstName"]').value
+            employee.lastName = form.querySelector('input[name="lastName"]').value
+            employee.age = form.querySelector('input[name="age"]').value
+            console.log("Form data " + JSON.stringify(employee))
+        }
+    </script>
+</hmtl>

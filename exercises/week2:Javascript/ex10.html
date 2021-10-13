@@ -1,0 +1,53 @@
+<!-- Create a button that when clicked adds a new row to the table with data-->
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>ex 9</title>
+        </head>
+        <body>
+            <!-- Note table id -->
+            <table id='table'>
+                <tr>
+                    <td>data 1</td>
+                    <td>data 2</td>
+                    <td><button onclick="doRow(this)">Get data</td>
+                </tr>
+            </table>
+            <button onclick='createRow()'>Create row</button>
+        </body>
+        <script>
+            // Function retrieves data from table cells
+            function doRow(buttonElement) {
+                var rowElement = buttonElement.parentNode.parentNode
+                // or var rowElement = buttonElement.closest('tr')
+                var data = {}
+    
+                // Accessing data in cells
+                data.cell1 = rowElement.cells[0].firstChild.textContent;
+                data.cell2 = rowElement.cells[1].firstChild.textContent;
+                
+                // Converts data from object to string and logs in console
+                console.log(JSON.stringify(data))
+            }
+            // Function creates new table row
+            function createRow() {
+
+                // Selects table
+                var tableElement = document.getElementById('table')
+                // Creates object with data
+                var data = {cell1 : "Millie", cell2 : "is so", cell3 : "adorable"}
+                // Creates row at last position
+                var rowElement = tableElement.insertRow(-1)
+                // Inserts cell at position 1 (0)
+                var cellElement = rowElement.insertCell(0)
+                // Inserts data into cell1
+                cellElement.innerHTML = data.cell1
+                // Cell 2
+                cellElement = rowElement.insertCell(1)
+                cellElement.innerHTML = data.cell2
+                // Cell 3
+                cellElement = rowElement.insertCell(2)
+                cellElement.innerHTML = data.cell3
+            }
+        </script>
+    </html>
