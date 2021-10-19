@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2: extracting (and logging to console) the first names from a JSON object</title>
+    </head>
+    <body>
+        <button onclick="displayJSON()">Go</button>
+    </body>
+    <script>
+        function displayJSON(){
+            var obj = JSON.parse('{"employees": [{"firstName": "John", "lastName": "Doe"},{"firstName": "Anna", "lastName": "Smith"},{"firstName": "Peter", "Jones": "Doe"}]}')
+            
+            // Printing out each first name in JSON object
+            for (employee of obj.employees) {
+                console.log(employee.firstName)
+            }
+        }
+    </script>
+</html>

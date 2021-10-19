@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JSON and AJAX (with jQuery)
+        </title>
+    </head>
+    <body>
+        {
+            "isbn": 1234567, 
+            "Author": "Andrew Beatty", 
+            "Title": "The Emptiness of Ping-pong balls"
+        }
+    </body>
+    <script>
+        var obj = JSON.parse('{"isbn": 1234567, "Author": "Andrew Beatty", "Title": "The Emptiness of Ping-pong balls"}')
+            console.log(obj.Title)
+    </script>
+</html>
